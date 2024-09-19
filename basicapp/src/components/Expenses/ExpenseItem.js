@@ -29,8 +29,7 @@ return (
             <h2>{ title}</h2>
             <div className='expense-item__price'>${props.amount}</div>
         </div>
-        <input type='text' value={newTitle} onChange={changeHandler}/>
-        <button onClick={clickHandler}>Change Title</button>
+        
     </Card>
 );
 
