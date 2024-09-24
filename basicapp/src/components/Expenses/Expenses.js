@@ -8,21 +8,17 @@ import Card from '../UI/Card'
 const  Expenses = (props) => {
   return (
     <Card className="expenses">
-
-      {
-        props.item.map(
-          expense => ( 
-            <ExpenseItem
-               date={ expense.date}
-               title={ expense.title}
-               amount={ expense.amount} />
-
-          )
-        )
-      }
-     
-      
-    </Card>
+    {
+      props.item.map((expense) => (
+        <ExpenseItem
+          key={expense.id}  // Add a unique key prop here
+          date={expense.date}
+          title={expense.title}
+          amount={expense.amount}
+        />
+      ))
+    }
+  </Card>
   );
 }
 

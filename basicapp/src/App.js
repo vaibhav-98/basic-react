@@ -33,21 +33,19 @@ let DUMMY_EXPENSE = [
 ];
 
 const App = () => {
-  // let expenceDate = new Date(2021, 3, 28);
-  // let expenceTitle = "School Fee";
-  // let expenceAmount = 300;
+
    
   const [expenses, setExpenses] = useState(DUMMY_EXPENSE)
     
-   const addExpenseHandler = (expense) => {
-     const updatedExpense = [expense, ...expenses]
-     setExpenses(updatedExpense)
-    
-   }
+  const addExpenseHandler = (expense) => {
+    setExpenses((prevExpenses) => {
+      return [expense, ...prevExpenses]; // Add new expense at the start of the array
+    });
+  };
   return (
     <div>
       < NewExpenses onAddExpense = {addExpenseHandler}/>
-       <Expenses item={expense}/>
+       <Expenses item={expenses}/>
     </div>
   );
 }
